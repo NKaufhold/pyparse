@@ -1,5 +1,7 @@
 import os, argparse
-        
+
+
+# Modified by Natalie Kaufhold November 2026 
 class CommandArgs():
     def __init__(self):
         self.USAGE = "python3 path/to/pyparse.py <inputdir> <outputdir> <mode>"

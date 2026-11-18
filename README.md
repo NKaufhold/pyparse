@@ -13,6 +13,10 @@ maintained by developers from the Kieker developers group and communities.
 ## Author
 Daphné Larrivain <daphne.larrivain@ecole.ensicaen.fr>
 
+## Modifications
+
+- Modified by Natalie Kaufhold November 2026
+
 ## Outputs
 
 It uses Python's built-in `ast` module to get the abstract syntax tree (AST) of
