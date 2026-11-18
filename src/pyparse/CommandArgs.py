@@ -9,7 +9,7 @@ class CommandArgs():
                                               description=self.DESCRIPTION)
         
         self.parser.add_argument("-i", "--input-dir", type=_is_directory, help="Input directory of the target Python application")
-        self.parser.add_argument("-o", "--output-dir", type=_is_directory, help="Input directory of the target Python application")
+        self.parser.add_argument("-o", "--output-dir", type=_is_directory, help="Output directory of the target Python application")
         self.parser.add_argument("-m", "--mode", type=_correct_mode, help="Operation flow analysis (call), data flow analysis (dataflow) or both (both)")
         self.parser.add_argument("-e", "--external", action="store_true", help="Resolve calls from external modules")
         self.parser.add_argument("-v", "--verbose", action="store_true", help="Verbose output")
