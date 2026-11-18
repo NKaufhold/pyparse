@@ -8,9 +8,9 @@ class CommandArgs():
         self.parser = argparse.ArgumentParser(usage=self.USAGE,
                                               description=self.DESCRIPTION)
         
-        self.parser.add_argument("-i", "--input-dir", type=_is_directory, help="Input directory of the target Python application")
-        self.parser.add_argument("-o", "--output-dir", type=_is_directory, help="Output directory of the target Python application")
-        self.parser.add_argument("-m", "--mode", type=_correct_mode, help="Operation flow analysis (call), data flow analysis (dataflow) or both (both)")
+        self.parser.add_argument("input_dir", type=_is_directory, help="Input directory of the target Python application")
+        self.parser.add_argument("output_dir", type=_normalize_directory, help="Output directory of the target Python application")
+        self.parser.add_argument("mode", type=_correct_mode, help="Operation flow analysis (call), data flow analysis (dataflow) or both (both)")
         self.parser.add_argument("-e", "--external", action="store_true", help="Resolve calls from external modules")
         self.parser.add_argument("-v", "--verbose", action="store_true", help="Verbose output")
         
@@ -43,7 +43,8 @@ def _correct_mode(value):
     
 def _is_directory(value):
     if not os.path.isdir(value):
-        argparse.ArgumentTypeError("<inputdir> is not a directory")
-    if not value.endswith("/"):
-        value += "/"
-    return os.path.dirname(value)   
+        raise argparse.ArgumentTypeError("<inputdir> is not a directory")
+    return _normalize_directory(value)
+
+def _normalize_directory(value):
+    return os.path.normpath(value)
