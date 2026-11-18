@@ -31,6 +31,19 @@ notfound_calls.csv
 notfound_dataflow.csv
 ```
 
+## Get Started
+
+1. Download the source code, either via the released archives or by cloning this repository.
+2. Navigate in the project-directory.
+3. Install the dependencies (a virtual environment is recommended).
+4. Start the script.
+
+```console
+cd pyparse
+pip install -r requirements.txt
+python3 main.py
+```
+
 ## Misc.
 
 Use `--help` to get more information.
