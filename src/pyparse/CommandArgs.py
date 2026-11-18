@@ -2,7 +2,7 @@ import os, argparse
         
 class CommandArgs():
     def __init__(self):
-        self.USAGE = "usage: python3 path/to/pyparse.py <inputdir> <outputdir> <mode>"
+        self.USAGE = "python3 path/to/pyparse.py <inputdir> <outputdir> <mode>"
         self.DESCRIPTION = "A static Python code parser compatible with the Kieker SAR (Static Architecture Recovery) tool."
         
         self.parser = argparse.ArgumentParser(usage=self.USAGE,
